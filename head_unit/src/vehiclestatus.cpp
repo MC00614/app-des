@@ -23,6 +23,7 @@ VehicleStatus::~VehicleStatus() {
 
 void VehicleStatus::sendGear(quint8 gear) {
     gearselectorService->fireGearSelectEvent(gear);
+    std::cout<<gear<<std::endl;
 }
 
 void VehicleStatus::gearselectorServiceInit() {

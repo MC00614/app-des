@@ -11,9 +11,9 @@
     "services" :
     [
         {
-            "service" : "4660",
-            "instance" : "22136",
-            "reliable" : "30560"
+            "service" : "4",
+            "instance" : "44",
+            "reliable" : "30544"
         }
     ],
 
