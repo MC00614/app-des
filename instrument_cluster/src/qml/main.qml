@@ -4,22 +4,11 @@ import QtQuick.Window 2.12
 Window {
     id: instrumentcluster
     visible: true
-    width: 400
-    height: 1280
-//    width: 1280
-//    height: 400
+    width: 1920
+    height: 600
     color: "black"
 
     InstrumentCluster {
-        anchors.horizontalCenter:parent.horizontalCenter
-        anchors.verticalCenter:parent.verticalCenter
-        transform: [
-            Rotation {
-                origin.x: 640
-                origin.y: 200
-                angle: 270
-//                angle: 0
-                }
-            ]
+        transform: Scale { xScale: 1.5; yScale: 1.5;}
     }
 }

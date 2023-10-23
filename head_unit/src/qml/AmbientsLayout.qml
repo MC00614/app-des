@@ -32,7 +32,7 @@ GridLayout {
                 readonly property real v: control.hsvValue
 
                 vertexShader: "
-                    #version 310 es
+                    #version 330 core
 
                     in vec4 qt_Vertex;
                     in vec2 qt_MultiTexCoord0;
@@ -45,9 +45,7 @@ GridLayout {
                     }"
 
                 fragmentShader: "
-                    #version 310 es
-
-                    precision mediump float;
+                    #version 330 core
 
                     in vec2 qt_TexCoord0;
                     out vec4 FragColor;
@@ -70,7 +68,7 @@ GridLayout {
                         FragColor *= ring;
                     }"
             }
-
+            
             Rectangle {
                 id: indicator
                 x: (parent.width - width)/2

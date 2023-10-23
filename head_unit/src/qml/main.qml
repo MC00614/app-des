@@ -11,11 +11,5 @@ Window  {
 
     MainLayout {
         visible: true
-        scale: 0.5
-
-        //Match target LCD
-        x: -256
-        y: -150
     }
-
 }
