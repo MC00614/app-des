@@ -3,19 +3,10 @@
     "logging" :
     {
         "level" : "verbose",
-        "console" : "false",
+        "console" : "true",
         "file" : { "enable" : "true", "path" : "./commonapi.log" },
         "dlt" : "true"
     },
-
-    "services" :
-    [
-        {
-            "service" : "4",
-            "instance" : "44",
-            "reliable" : "30544"
-        }
-    ],
 
     "service-discovery" :
     {
