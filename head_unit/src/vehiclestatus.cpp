@@ -12,7 +12,6 @@ VehicleStatus::VehicleStatus() {
 
     speedProxy = runtime->buildProxy<SpeedStatusProxy>("local", "SpeedStatus", "HeadUnit_Speed_Proxy");
     speedProxyInit();
-
 }
 
 VehicleStatus::~VehicleStatus() {
