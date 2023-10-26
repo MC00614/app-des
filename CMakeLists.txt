@@ -5,7 +5,6 @@ project(app-hu LANGUAGES CXX)
 set(INSTALL_DIRECTORY /usr/bin/${PROJECT_NAME})
 
 add_subdirectory(library)
-add_subdirectory(head_unit)
 add_subdirectory(instrument_cluster)
 
 if (BUILD_CONF)
