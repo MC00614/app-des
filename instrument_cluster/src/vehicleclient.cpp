@@ -27,12 +27,29 @@ VehicleClient::VehicleClient() {
 VehicleClient::~VehicleClient() {
 }
 
+int VehicleClient::getSpeed() {
+    return speed;
+}
+
+int VehicleClient::getBattery() {
+    return  battery;
+}
+
+bool VehicleClient::getBrake() {
+    return brake;
+}
+
+int VehicleClient::getGear() {
+    return gear;
+}
+
 void VehicleClient::speedProxyInit() {
     std::cout << "Checking Speed availability!" << std::endl;
     while (!speedProxy->isAvailable())
         usleep(10);
     std::cout << "Available..." << std::endl;
     speedProxy->getSpeedAttribute().getChangedEvent().subscribe([&](const int16_t& speed) {
+        this->speed = speed;
         emit speedChanged(speed);
     });
 }
@@ -43,6 +60,7 @@ void VehicleClient::batteryProxyInit() {
         usleep(10);
     std::cout << "Available..." << std::endl;
     batteryProxy->getBatteryAttribute().getChangedEvent().subscribe([&](const uint8_t& battery) {
+        this->battery = battery;
         emit batteryChanged(battery);
     });
 }
@@ -53,6 +71,7 @@ void VehicleClient::inputProxyInit() {
         usleep(10);
     std::cout << "Available..." << std::endl;
     inputProxy->getBrakeAttribute().getChangedEvent().subscribe([&](const bool& brake) {
+        this->brake = brake;
         emit brakeChanged(brake);
     });
 }
@@ -63,6 +82,7 @@ void VehicleClient::gearProxyInit() {
         usleep(10);
     std::cout << "Available..." << std::endl;
     gearProxy->getGearAttribute().getChangedEvent().subscribe([&](const uint8_t& gear) {
+        this->gear = gear;
         emit gearChanged(gear);
     });
 }
